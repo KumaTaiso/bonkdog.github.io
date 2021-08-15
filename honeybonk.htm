@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <!--This Code made by KumaTaiso-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    .center {
+      margin: 0;
+      position: absolute;
+      left: 25%;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 102px;
+      color: black;
+    }
+    body {
+      background-image: url("https://www.designbolts.com/wp-content/uploads/2013/02/Tiny-polyester-pixel-Grey-Seamless-Pattern-For-Website-Background.jpg");
+    }
+
+    </style>
+    
+<body onLoad="update_image_A()">
+
+<div class = "center">
+    &emsp;&emsp;&emsp;&emsp;&emsp; <span id="bonk_count"></span>
+    <br>
+    <img id="Bonk_Dog" img.src="https://media.discordapp.net/attachments/528215792672702464/876373770657480754/unknown.png"
+    height="700">
+</div>
+
+<script>
+
+    var bonk_count = 0;
+    var debounce = 0;
+    window.addEventListener("keydown",function(event) {
+    var keypress = event.key;
+    if(debounce == 1){
+        if(keypress != "0"){update_image_A();}
+        bonk_count++;
+        document.getElementById("bonk_count").innerHTML = bonk_count;
+        debounce = 0;
+    }
+    });
+    window.addEventListener("keyup", (e) => {
+    var keypress = event.key;
+    debounce = 1;
+    if(keypress != "0"){
+        update_image_B();
+    }
+});
+
+    function update_image_A(){
+        var img = document.getElementById("Bonk_Dog");
+        img.src="https://media.discordapp.net/attachments/528215792672702464/876373814475378698/unknown.png";
+    }
+    function update_image_B(){
+        var img = document.getElementById("Bonk_Dog");
+        img.src="https://media.discordapp.net/attachments/528215792672702464/876373770657480754/unknown.png";
+
+    }
+</script>
+
+</body>
+</html>
